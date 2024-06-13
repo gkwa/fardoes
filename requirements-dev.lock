@@ -18,6 +18,8 @@ cycler==0.12.1
     # via matplotlib
 fonttools==4.53.0
     # via matplotlib
+humanize==4.9.0
+    # via fardoes
 importlib-resources==6.4.0
     # via matplotlib
 jinja2==3.1.4

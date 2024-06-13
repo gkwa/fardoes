@@ -1,5 +1,6 @@
 import re
 
+import humanize
 import matplotlib.pyplot as plt
 import numpy
 
@@ -21,10 +22,10 @@ def main() -> int:
     min_time = numpy.min(times)
     max_time = numpy.max(times)
 
-    print(f"Mean time: {format_duration(mean_time)}")
-    print(f"Standard deviation: {format_duration(std_time)}")
-    print(f"Minimum time: {format_duration(min_time)}")
-    print(f"Maximum time: {format_duration(max_time)}")
+    print(f"Mean time: {humanize.naturaldelta(mean_time)}")
+    print(f"Standard deviation: {humanize.naturaldelta(std_time)}")
+    print(f"Minimum time: {humanize.naturaldelta(min_time)}")
+    print(f"Maximum time: {humanize.naturaldelta(max_time)}")
 
     plt.plot(containers, times, marker="o")
     plt.xlabel("Number of Containers")
@@ -41,12 +42,6 @@ def parse_log(log):
     matches = re.findall(pattern, log)
     data = [(int(containers), float(time)) for containers, time in matches]
     return zip(*data)
-
-
-def format_duration(seconds):
-    minutes = int(seconds // 60)
-    remaining_seconds = int(seconds % 60)
-    return f"{minutes} minutes {remaining_seconds} seconds"
 
 
 if __name__ == "__main__":

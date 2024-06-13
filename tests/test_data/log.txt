@@ -1,0 +1,7 @@
+[Jun 13 19:28:30.954] Found image in local store: 6811c3c085385d8a565acabea58eb0fd265270b5c341044f232573ff80b5d5c6
+[Jun 13 19:28:30.954] Batch processing start
+[Jun 13 19:35:59.326] Processed 1 containers in 448.372s (0.002/s)
+[Jun 13 19:37:45.799] Processed 2 containers in 554.845s (0.004/s)
+[Jun 13 19:41:18.707] Processed 4 containers in 767.752s (0.005/s)
+[Jun 13 19:43:06.687] Batch processing completed in 875.732s
+root@ip-172-31-17-58:~#

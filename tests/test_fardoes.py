@@ -1,4 +1,4 @@
-import os
+import pathlib
 
 import fardoes
 import pytest
@@ -6,12 +6,12 @@ import pytest
 
 @pytest.fixture
 def test_data_dir():
-    return os.path.join(os.path.dirname(__file__), "test_data")
+    return pathlib.Path(__file__).parent / "test_data"
 
 
 def test_parse_log(test_data_dir):
-    log_file = os.path.join(test_data_dir, "log.txt")
-    with open(log_file, "r") as file:
+    log_file = test_data_dir / "log.txt"
+    with log_file.open("r") as file:
         log = file.read()
     containers, times = fardoes.parse_log(log)
     assert list(containers) == [1, 2, 4]
